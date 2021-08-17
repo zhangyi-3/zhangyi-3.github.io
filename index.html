@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Zhang Yi</title>
+
+    <meta name="author" content="Zhang Yi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <!--    <link rel="icon" type="image/png" href="images/seal_icon.png">-->
+</head>
+
+<body>
+<table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+    <tr style="padding:0px">
+        <td style="padding:0px">
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                <tbody>
+                <tr style="padding:0px">
+                    <td style="padding:2.5%;width:63%;vertical-align:middle">
+                        <p style="text-align:center">
+                            <name>Zhang Yi</name>
+                        </p>
+                        <p>I am currently a second-year Ph.D. student at <a
+                                href="https://mmlab.ie.cuhk.edu.hk/">MMLab</a> under the supervision of
+                            <a href="https://www.ee.cuhk.edu.hk/~hsli/">Prof. Hongsheng Li</a> and <a
+                                    href="http://www.ee.cuhk.edu.hk/~xgwang/">Prof. Xiaogang Wang</a>.
+                            Before joining CUHK, I received my B.Eng. degrees from <a href="https://www.nju.edu.cn/">Nanjing
+                                University</a> in 2019.
+                        </p>
+                        <p>
+                            We are <font color="red"><strong>hiring interns</strong></font> at SenseTime Research.
+                            Drop me (<a href="tomail:zhangyi3@sensetime.com">email</a> ) your resume if you are
+                            interested in low-level vision
+                            tasks (e.g. Denoising, Super-resolution, HDR, optical flow, ISP pipeline design).
+                        </p>
+                        <p style="text-align:center">
+                            <a href="mailto:zhangyi@link.cuhk.edu.hk">Email</a> &nbsp/&nbsp
+                            <!--                    <a href="data/JonBarron-CV.pdf">CV</a> &nbsp/&nbsp-->
+                            <!--                    <a href="data/JonBarron-bio.txt">Bio</a> &nbsp/&nbsp-->
+                            <a href="https://scholar.google.com/citations?user=zQmprrUAAAAJ&hl=zh-CN">Google Scholar</a>
+                            &nbsp/&nbsp
+                            <!--                    <a href="https://twitter.com/jon_barron">Twitter</a> &nbsp/&nbsp-->
+                            <a href="https://github.com/zhangyi-3/">Github</a>
+                        </p>
+                    </td>
+                    <td style="padding:2.5%;width:40%;max-width:40%">
+                        <a href="images/zhangyi3.png"><img style="width:100%;max-width:100%" alt="profile photo"
+                                                           src="images/zhangyi3.png" class="hoverZoomLink"></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                <tbody>
+                <tr>
+                    <td style="padding:20px;width:100%;vertical-align:middle">
+                        <heading>Research</heading>
+                        <p>
+                            I'm interested in low-level vision, computational photography and deep learning. <br>
+                            Some of my papers have been used in XIAOMI's flagship smartphones.
+                            <!--                            Representative papers are <span class="highlight">highlighted</span>.-->
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                <tbody>
+
+                <tr onmouseout="IDR_stop()" onmouseover="IDR_start()">
+                    <td style="padding:20px;width:25%;vertical-align:middle">
+                        <div class="one">
+                            <div class="two" id="IDR_image" style="opacity: 0;">
+                                <img src="images/IDR_after.jpg" width="160"></div>
+                            <img src="images/IDR_before.jpg" width="160">
+                        </div>
+                        <script type="text/javascript">
+                            function IDR_start() {
+                                document.getElementById('IDR_image').style.opacity = "1";
+                            }
+
+                            function IDR_stop() {
+                                document.getElementById('IDR_image').style.opacity = "0";
+                            }
+
+                            IDR_stop()
+                        </script>
+                    </td>
+                    <td style="padding:20px;width:75%;vertical-align:middle">
+                        <a href="">
+                            <papertitle>Self-Supervised Image Denoising via Iterative Data Refinement</papertitle>
+                        </a>
+                        <br>
+                        <strong>Yi Zhang</strong>,
+                        <a href="">Dasong Li</a>,
+                        <a href="">Honwei Qin</a>,
+                        <a href="http://www.ee.cuhk.edu.hk/~xgwang/">Xiaogang Wang</a>,
+                        <a href="https://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a>,
+                        <br>
+                        <em>arXiv</em>, 2021
+                        <br>
+                        <!--                <a href="http://player.bilibili.com/player.html?aid=22575605&cid=37440336&page=1">demo</a> /-->
+                        <a href="https://github.com/zhangyi-3/IDR">code</a> /
+                        <a href="https://github.com/zhangyi-3/IDR">dataset</a> /
+                        <a href="">arXiv</a>
+                        <p></p>
+                        <p>Self-supervised learning image denoising via refining the intermediate targets iteratively.
+                            We achieve SOTA results on both real-world noise and synthetic noises (both point-wise and
+                            spatial correlated)</p>
+                    </td>
+                </tr>
+
+                <tr onmouseout="noise_synthesis_stop()" onmouseover="noise_synthesis_start()">
+                    <td style="padding:20px;width:25%;vertical-align:middle">
+                        <div class="one">
+                            <div class="two" id="noise_synthesis_image" style="opacity: 0;">
+                                <img src="images/noise_synthesis_after.jpg" width="160"></div>
+                            <img src="images/noise_synthesis_before.jpg" width="160">
+                        </div>
+                        <script type="text/javascript">
+                            function noise_synthesis_start() {
+                                document.getElementById('noise_synthesis_image').style.opacity = "1";
+                            }
+
+                            function noise_synthesis_stop() {
+                                document.getElementById('noise_synthesis_image').style.opacity = "0";
+                            }
+
+                            noise_synthesis_stop()
+                        </script>
+                    </td>
+                    <td style="padding:20px;width:75%;vertical-align:middle">
+                        <a href="">
+                            <papertitle>Rethinking Noise Synthesis and Modeling in Raw Denoising</papertitle>
+                        </a>
+                        <br>
+                        <strong>Yi Zhang</strong>,
+                        <a href="">Honwei Qin</a>,
+                        <a href="http://www.ee.cuhk.edu.hk/~xgwang/">Xiaogang Wang</a>,
+                        <a href="https://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a>,
+                        <br>
+                        <em>ICCV</em>, 2021
+                        <br>
+                        <!--                <a href="http://player.bilibili.com/player.html?aid=22575605&cid=37440336&page=1">demo</a> /-->
+                        <!--                <a href="https:">code</a> /-->
+                        <a href="">arXiv</a>
+                        <p></p>
+                        <p>Synthesize realistic raw image noise by sampling directly from the real noise distribution.
+                            We also found existing comparisons of noise synthesis methods are based on inaccurate noise parameters.</p>
+                    </td>
+                </tr>
+
+
+                <tr onmouseout="starcraft_stop()" onmouseover="starcraft_start()">
+                    <td style="padding:20px;width:25%;vertical-align:middle">
+                        <div class="one">
+                            <div class="two" id="starcraft_image" style="opacity: 0;">
+                                <img src="images/starcraft_after.jpg" width="160"></div>
+                            <img src="images/starcraft_before.jpg" width="160">
+                        </div>
+                        <script type="text/javascript">
+                            function starcraft_start() {
+                                document.getElementById('starcraft_image').style.opacity = "1";
+                            }
+
+                            function starcraft_stop() {
+                                document.getElementById('starcraft_image').style.opacity = "0";
+                            }
+
+                            starcraft_stop()
+                        </script>
+                    </td>
+                    <td style="padding:20px;width:75%;vertical-align:middle">
+                        <a href="https://arxiv.org/abs/1809.09095">
+                            <papertitle>On Reinforcement Learning for Full-length Game of StarCraft</papertitle>
+                        </a>
+                        <br>
+                        <a href="">Zhen-Jia Pang</a>,
+                        <a href="">Ruo-Ze Liu</a>,
+                        <a href="">Zhou-Yu Meng</a>,
+                        <!--                <br>-->
+                        <strong>Yi Zhang</strong>,
+                        <a href="http://www.lamda.nju.edu.cn/yuy/">Yang Yu</a>,
+                        <a href="">Tong Lu</a>,
+                        <br>
+                        <em>AAAI</em>, 2019 &nbsp <font color="red"><strong>(Oral)</strong></font>
+                        <br>
+                        <a href="https://www.bilibili.com/video/av22575605?zw">demo</a> /
+                        <!--                                <a href="https:">code</a> /-->
+                        <a href="https://arxiv.org/abs/1809.09095">arXiv</a>
+                        <p></p>
+                        <p>We can achieve over 93% winning rate of Protoss against the most difficult non-cheating
+                            built-in AI (level-7) of Terran,
+                            training within two days using a single machine with only 48 CPU cores and 8 K40 GPUs.</p>
+                    </td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                <tbody>
+
+
+                <!--        <tr>-->
+                <!--            <td>-->
+                <!--                <heading>Service</heading>-->
+                <!--            </td>-->
+                <!--        </tr>-->
+                <!--        </tbody></table>-->
+                <!--        <table width="100%" align="center" border="0" cellpadding="20"><tbody>-->
+                <!--        <tr>-->
+                <!--            <td style="padding:20px;width:25%;vertical-align:middle"><img src=""></td>-->
+                <!--            <td width="75%" valign="center">-->
+                <!--                <a href="">Digital Image Processing ELEG4512 Spring 2021</a>-->
+                <!--                <br><br>-->
+                <!--&lt;!&ndash;                <a href="http://cvpr2019.thecvf.com/area_chairs">Area Chair, CVPR 2019</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;                <br><br>&ndash;&gt;-->
+                <!--&lt;!&ndash;                <a href="http://cvpr2018.thecvf.com/organizers/area_chairs">Area Chair, CVPR 2018</a>&ndash;&gt;-->
+                <!--            </td>-->
+                <!--        </tr>-->
+
+                <td width="100%" valign="middle">
+                    <heading>Honors</heading>
+                    <p>
+                    </p>
+                    <li>Postgraduate Scholarship, the Chinese University of Hong Kong, 2019 ~ Present</li>
+                    <li>Outstanding Graduate of Nanjing University, 2019</li>
+                    <li>Merit student in Jiangsu Province, 2018</li>
+                    <li>National Scholarship, 2018</li>
+                    <p></p>
+                </td>
+                </tbody>
+            </table>
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                <tbody>
+                <tr>
+                    <td style="padding:0px">
+                        <br>
+                        <p style="text-align:right;font-size:small;">
+                            The website template was borrowed from <a
+                                href="https://github.com/jonbarron/jonbarron_website">here</a>.
+                            <br>
+                            <!--                    Also, consider using <a href="https://leonidk.com/">Leonid Keselman</a>'s <a href="https://github.com/leonidk/new_website">Jekyll fork</a> of this page.-->
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+
+</html>
