@@ -61,7 +61,7 @@
                     <td style="padding:20px;width:100%;vertical-align:middle">
                         <heading>Research</heading>
                         <p>
-                            My research interests include computer vision, computational photography, and image processing.
+                            My research interests include computer vision, computational photography, and generative models.
                             I enjoy the research that can benefit real-world applications.
                             Most of my papers have been used in some commercial products (e.g. XIAOMI's flagship smartphones).
                             <!--                            Representative papers are <span class="highlight">highlighted</span>.-->
@@ -72,6 +72,52 @@
             </table>
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
                 <tbody>
+
+                <tr onmouseout="kbnet_stop()" onmouseover="kbnet_start()">
+                    <td style="padding:20px;width:25%;vertical-align:middle">
+                        <div class="one">
+                            <div class="two" id="kbnet_image" style="opacity: 0;">
+                                <img style="width:100%" src="images/kbnet_after.jpg" ></div>
+                            <img style="width:100%" src="images/kbnet_before.jpg" >
+                        </div>
+                        <script type="text/javascript">
+                            function kbnet_start() {
+                                document.getElementById('kbnet_image').style.opacity = "1";
+                            }
+
+                            function kbnet_stop() {
+                                document.getElementById('kbnet_image').style.opacity = "0";
+                            }
+
+                            kbnet_stop()
+                        </script>
+                    </td>
+                    <td style="padding:20px;width:75%;vertical-align:middle">
+                        <a href="">
+                            <papertitle>KBNet: Kernel Basis Network for Image Restoration</papertitle>
+                        </a>
+                        <br>
+                        <strong>Yi Zhang</strong>,
+                        <a href="https://scholar.google.com/citations?user=ZJLzmwgAAAAJ">Dasong Li</a>,
+                        <a href="https://scholar.google.com/citations?user=fbEuTJUAAAAJ">Xiaoyu Shi</a>,
+                        <a href="https://scholar.google.com/citations?user=f5MTTy4AAAAJ">Dailan He</a>,
+                        <a href="">Kangning Song</a>,
+                        <a href="https://scholar.google.com/citations?user=-B5JgjsAAAAJ">Xiaogang Wang</a>,
+                        <a href="https://scholar.google.com/citations?user=ZGM7HfgAAAAJ">Honwei Qin</a>,
+                        <a href="https://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a>
+                        <br>
+<!--                        <em>IJCV, 2022</em>-->
+                        <br>
+                        <!--                <a href="http://player.bilibili.com/player.html?aid=22575605&cid=37440336&page=1">demo</a> /-->
+                        <!--                <a href="https:">code</a> /-->
+                        <a href="">arXiv</a>
+<!--                        <a href="https://github.com/zhangyi-3/noise-synthesis">code</a>-->
+                        <p></p>
+                        <p>A general-purpose backbone for image restoration tasks (e.g. denoising, deraining, and deblurring).
+                            A novel kernel basis attention (KBA) module has been proposed to effectively aggregate the spatial information via a
+                            series of learnable kernel bases.</p>
+                    </td>
+                </tr>
 
                 <tr onmouseout="group_shift_stop()" onmouseover="group_shift_start()">
                     <td style="padding:20px;width:25%;vertical-align:middle">
