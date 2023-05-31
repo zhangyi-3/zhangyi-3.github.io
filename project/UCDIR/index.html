@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="A Unified Conditional Framework for Diffusion-based Image Restoration.">
+  <meta name="keywords" content="UCDIR">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Unified Conditional Framework for Diffusion-based Image Restoration</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zhangyi-3.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <!-- <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div> -->
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">A Unified Conditional Framework for Diffusion-based Image Restoration</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zhangyi-3.github.io">Yi Zhang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=fbEuTJUAAAAJ&hl=zh-CN">Xiaoyu Shi</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://dasongli1.github.io/">Dasong Li</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=-B5JgjsAAAAJ&hl=zh-CN">Xiaogang Wang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://jianwang-cmu.github.io/">Jian Wang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The Chinese University of Hong Kong,</span>
+            <span class="author-block"><sup>2</sup>Snap Research</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://zhangyi-3.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://zhangyi-3.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://zhangyi-3.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script defer src="https://unpkg.com/img-comparison-slider@7/dist/index.js"></script>
+<link  rel="stylesheet"  href="https://unpkg.com/img-comparison-slider@7/dist/styles.css"/>
+
+<style>
+  .slider-example-split-line {
+    --divider-width: 4px;
+    --divider-color: #ffa658;
+    --default-handle-opacity: 0;
+  }
+</style>
+
+<style>
+  .before,
+  .after { margin: 0; }
+
+  .before figcaption,
+  .after figcaption {
+    background: #fff;
+    border: 1px solid #c0c0c0;
+    border-radius: 12px;
+    color: #2e3452;
+    opacity: 0.8;
+    padding: 12px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 100%;
+  }
+
+  .before figcaption {left: 12px;}
+  .after figcaption { right: 12px;}
+</style>
+ 
+<div class="columns is-centered">
+
+  <img-comparison-slider tabindex="0" class="slider-example-split-line rendered"  hover="hover" >
+  <figure slot="first" class="before">
+    <img src="images/20025_00_0.04s_cr2.jpg" width=100% height=100%>
+    <figcaption><strong>Before</strong></figcaption>
+  </figure>
+  <figure slot="second" class="after">
+    <img  src="images/20025_00_004s_sr_cr2.jpg"  width=100% height=100%>
+    <figcaption><strong>Denoise</strong></figcaption>
+  </figure>
+  </img-comparison-slider>
+</div>
+ 
+<div class="columns is-centered">
+
+
+<img-comparison-slider tabindex="0" class="slider-example-split-line rendered"  hover="hover" >
+<figure slot="first" class="before">
+  <img  width=100% src="images/gopro_lr_rs.jpg"  >
+  <figcaption><strong>Before</strong></figcaption>
+</figure>
+<figure slot="second" class="after">
+  <img  width=100% src="images/gopro_sr_rs.jpg" >
+  <figcaption><strong>Deblur</strong></figcaption>
+</figure>
+</img-comparison-slider>
+<img-comparison-slider tabindex="0" class="slider-example-split-line rendered"  hover="hover" >
+<figure slot="first" class="before">
+  <img   width=100% src="images/jpg_lr_rs.jpg">
+  <figcaption><strong>Before</strong></figcaption>
+</figure>
+<figure slot="second" class="after">
+  <img  width=100% src="images/jpg_sr_rs.jpg" >
+  <figcaption><strong>Dejpeg</strong></figcaption>
+</figure>
+</img-comparison-slider>
+    <!-- <h2 class="title is-3"> </h2> -->
+ 
+  
+</div>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Diffusion Probabilistic Models (DPMs) have recently shown remarkable performance in image generation tasks, 
+            which are capable of generating highly realistic images. When adopting DPMs for image restoration tasks, 
+            the crucial aspect lies in how to integrate the conditional information to guide the DPMs to generate accurate and natural output, 
+            which has been largely overlooked in existing works. 
+          </p>
+          <p>
+            In this paper, we present a unified conditional framework based on diffusion models for image restoration. 
+            We leverage a lightweight UNet to predict initial guidance and the diffusion model to learn the residual of the guidance. 
+            By carefully designing the basic module and integration module for the diffusion model block, 
+            we integrate the guidance and other auxiliary conditional information into every block of the diffusion model to achieve spatially-adaptive 
+            generation conditioning. To handle high-resolution images, we propose a simple yet effective inter-step patch-splitting strategy to produce 
+            arbitrary-resolution images without grid artifacts. We evaluate our conditional framework on three challenging tasks: extreme low-light denoising, 
+            deblurring, and JPEG restoration, demonstrating its significant improvements in perceptual quality and the generalization to restoration tasks.
+          </p>
+ 
+          <!-- <p>
+            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
+            photos/videos into deformable NeRF
+            models that allow for photorealistic renderings of the subject from arbitrary
+            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
+            using a
+            rig with two mobile phones that take time-synchronized photos, yielding train/validation
+            images of the same pose at different viewpoints. We show that our method faithfully
+            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
+            fidelity.
+          </p> -->
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <image src="images/overview.png" class="img-responsive" alt="overview" width="90%" style="max-height: 450px;margin:auto;">
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <p>
+          <strong>Left</strong>: An overview of the conditional framework. <strong>Right</strong>: The diffusion model block. “...” on the
+top-right represents the auxiliary scalar information for different tasks (e.g., noise level, blur type.).
+        </p>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"></h2>
+        <image src="images/overview1.png" class="img-responsive" alt="overview" width="90%" style="max-height: 450px;margin:auto;">
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <p>
+          <strong>Left</strong>: Adaptive Kernel Guidance Module (AKGM). Here, N is the number of kernel bases. We set
+N = 3 for visualization. <strong>Right</strong>: Inter-step patch-splitting.
+        </p>
+      </div>
+    </div>
+ 
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+
+ 
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+
+  </div>
+</section>
+ -->
+
+
+<section class="section" id="BibTeX" >
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{zhang2023UCDIR,
+      author    = {Zhang, Yi and Shi, Xiaoyu and Li, Dasong and Wang, Xiaogang and Wang, Jian and Li, Hongsheng},
+      title     = {A Unified Conditional Framework for Diffusion-based Image Restoration},
+      journal   = {arXiv preprint arXiv:},
+      year      = {2023},
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://zhangyi-3.github.io/">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://zhangyi-3.github.io/" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-7">
+        <div class="content">
+          <p>
+            If you have any question, feel free to contact <strong>zhangyi@link.cuhk.edu.hk</strong>
+          </p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Template Credits: <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, <a href="https://iceclear.github.io/projects/stablesr/">StableSR</a>, <a href="https://github.com/sneas/img-comparison-slider">img-comparison-slider</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
