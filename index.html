@@ -6,10 +6,43 @@
     <title>Zhang Yi</title>
 
     <meta name="author" content="Zhang Yi">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <!--    <link rel="icon" type="image/png" href="images/seal_icon.png">-->
+    
+    <!-- Mobile detection script -->
+    <script type="text/javascript">
+        // Check if device is mobile
+        window.isMobile = function() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+        };
+        
+        // When page loads, check if mobile and adjust accordingly
+        window.addEventListener('DOMContentLoaded', function() {
+            if (isMobile()) {
+                // Adjust comparison sliders for mobile
+                var sliders = document.getElementsByTagName('img-comparison-slider');
+                for (var i = 0; i < sliders.length; i++) {
+                    sliders[i].setAttribute('hover', 'false');
+                }
+                
+                // Fix project images size
+                var oneElements = document.getElementsByClassName('one');
+                var twoElements = document.getElementsByClassName('two');
+                
+                for (var i = 0; i < oneElements.length; i++) {
+                    var width = oneElements[i].offsetWidth;
+                    oneElements[i].style.height = 'auto';
+                }
+                
+                for (var i = 0; i < twoElements.length; i++) {
+                    var width = twoElements[i].offsetWidth;
+                    twoElements[i].style.height = 'auto';
+                }
+            }
+        });
+    </script>
 </head>
 
 
@@ -21,6 +54,25 @@
         --divider-width: 4px;
         --divider-color: #ffa658;
         --default-handle-opacity: 0;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    @media only screen and (max-width: 768px) {
+        img-comparison-slider {
+            max-width: 100% !important;
+            width: 100% !important;
+            height: auto !important;
+        }
+        
+        img-comparison-slider img {
+            max-width: 100% !important;
+            width: 100% !important;
+            height: auto !important;
+        }
     }
 </style>
 
@@ -42,6 +94,14 @@
         top: 50%;
         transform: translateY(-50%);
         line-height: 100%;
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+    
+    img-comparison-slider:hover .before figcaption,
+    img-comparison-slider:hover .after figcaption {
+        opacity: 1;
     }
 
     .before figcaption {
@@ -50,6 +110,14 @@
 
     .after figcaption {
         right: 12px;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .before figcaption,
+        .after figcaption {
+            padding: 8px;
+            font-size: 12px;
+        }
     }
 </style>
 
@@ -60,51 +128,29 @@
         <td style="padding:0px">
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
                 <tbody>
-                <tr style="padding:0px">
+                <tr style="padding:0px;background: linear-gradient(to right, rgba(240,240,245,0.5), rgba(255,255,255,0));">
                     <td style="padding:2.5%;width:63%;vertical-align:middle">
                         <p style="text-align:center">
                             <name>Zhang Yi</name>
                         </p>
-                        <p>
+                        <p style="line-height:1.5;margin-top:15px;margin-bottom:15px;">
                             I am currently a Senior Researcher at SenseTime.
                             I obtained my Ph.D. in 2023 from the <a href="https://mmlab.ie.cuhk.edu.hk/">MMLab</a> at The Chinese University of Hong Kong (CUHK),
                             where I was fortunate to be advised by <a href="https://www.ee.cuhk.edu.hk/~hsli/">Prof. Hongsheng Li</a> and
                             <a href="https://scholar.google.com/citations?user=-B5JgjsAAAAJ">Prof. Xiaogang Wang</a>.
                             Prior to that, I earned my bachelor's degree from <a href="https://www.nju.edu.cn/EN/main.htm">Nanjing University</a> in 2019.
 
-<!--                            I am currently a fourth-year Ph.D. student at <a-->
-<!--                                href="https://mmlab.ie.cuhk.edu.hk/">MMLab</a> under the supervision of-->
-<!--                            <a href="https://www.ee.cuhk.edu.hk/~hsli/">Prof. Hongsheng Li</a> and <a-->
-<!--                                    href="https://scholar.google.com/citations?user=-B5JgjsAAAAJ">Prof. Xiaogang-->
-<!--                                Wang</a>.-->
-<!--                            Before joining CUHK, I received my bachelor's degree from <a-->
-<!--                                    href="https://www.nju.edu.cn/EN/main.htm">Nanjing-->
-<!--                                University</a> in 2019.-->
                         </p>
-<!--                        <p>-->
-<!--                            <font color="red"><strong>** I'm currently looking for industry positions.-->
-<!--                            </strong></font>-->
-<!--                        </p>-->
-                        <!--                        <p>-->
-                        <!--                            We are <font color="red"><strong>hiring interns</strong></font> at SenseTime Research.-->
-                        <!--                            Please (<a href="tomail:zhangyi3@sensetime.com">email</a> ) me if you are-->
-                        <!--                            interested in low-level vision-->
-                        <!--                            tasks (e.g., Denoising, Super-resolution, HDR, optical flow, ISP pipeline design).-->
-                        <!--                        </p>-->
-                        <p style="text-align:center">
-                            <a href="mailto:zhangyi3.link@gmail.com">Email</a> &nbsp/&nbsp
-                            <!--                    <a href="data/JonBarron-CV.pdf">CV</a> &nbsp/&nbsp-->
-                            <!--                    <a href="data/JonBarron-bio.txt">Bio</a> &nbsp/&nbsp-->
-                            <a href="https://scholar.google.com/citations?user=zQmprrUAAAAJ">Google Scholar</a>
+                        <p style="text-align:center;margin-top:25px;">
+                            <a href="mailto:zhangyi3.link@gmail.com" style="margin:0 5px;display:inline-block;padding:5px 10px;border-radius:4px;background-color:rgba(0,0,0,0.02);transition:all 0.3s ease;">Email</a> &nbsp/&nbsp
+                            <a href="https://scholar.google.com/citations?user=zQmprrUAAAAJ" style="margin:0 5px;display:inline-block;padding:5px 10px;border-radius:4px;background-color:rgba(0,0,0,0.02);transition:all 0.3s ease;">Google Scholar</a>
                             &nbsp/&nbsp
-                            <!--                    <a href="https://twitter.com/jon_barron">Twitter</a> &nbsp/&nbsp-->
-                            <a href="https://github.com/zhangyi-3/">Github</a>&nbsp/&nbsp
-                            <a href="https://mycuhk-my.sharepoint.com/:b:/g/personal/1155135732_link_cuhk_edu_hk/EXaX_9PaMFJJtoLZT2zDWHMBF0kSxNFg8ur7D-ynYdR5cg?e=hv7bM5">CV</a>
-
+                            <a href="https://github.com/zhangyi-3/" style="margin:0 5px;display:inline-block;padding:5px 10px;border-radius:4px;background-color:rgba(0,0,0,0.02);transition:all 0.3s ease;">Github</a>&nbsp/&nbsp
+                            <a href="https://mycuhk-my.sharepoint.com/:b:/g/personal/1155135732_link_cuhk_edu_hk/EXaX_9PaMFJJtoLZT2zDWHMBF0kSxNFg8ur7D-ynYdR5cg?e=hv7bM5" style="margin:0 5px;display:inline-block;padding:5px 10px;border-radius:4px;background-color:rgba(0,0,0,0.02);transition:all 0.3s ease;">CV</a>
                         </p>
                     </td>
                     <td style="padding:2.5%;width:30%;max-width:30%">
-                        <a href="images/zhangyi3.png"><img style="width:100%;max-width:100%" alt="profile photo"
+                        <a href="images/zhangyi3.jpg"><img style="width:100%;max-width:100%;border-radius:50%;box-shadow:0 4px 10px rgba(0,0,0,0.1);" alt="profile photo"
                                                            src="images/zhangyi3_circle.png" class="hoverZoomLink"></a>
                     </td>
                 </tr>
@@ -117,11 +163,8 @@
                         <heading>Research</heading>
                         <p>
                             My current research interests focus on generative models and computational photography.
-<!--                            I enjoy the research that can benefit real-world applications.-->
-<!--                            Some of my papers have been used in some commercial products.-->
                             I am passionate about conducting research with real-world impact, addressing pressing technological challenges.
                             Most of my publications have been successfully integrated into commercial products.
-                            <!--                            Representative papers are <span class="highlight">highlighted</span>.-->
                         </p>
                     </td>
                 </tr>
@@ -165,12 +208,9 @@
                         <br>
                         <em>SIGGRAPH Asia</em>, 2024,  &nbsp; (Journal)  &nbsp; <font color="red"><strong>(Best Paper Award)</strong></font>
                         <br>
-                        <!--                <a href="http://player.bilibili.com/player.html?aid=22575605&cid=37440336&page=1">demo</a> /-->
-                        <!--                <a href="https:">code</a> /-->
                         <a href="https://dl.acm.org/doi/abs/10.1145/3687995">arXiv</a> /
                         <a href="https://jianwang-cmu.github.io/24ARmirror/supp.pdf">supplement</a> /
                         <a href="https://perspective-armirror.github.io/">code</a>
-<!--                        <a href="https://www.dropbox.com/scl/fi/u344l7vvfkgxcke2kq2rn/video_supp.mov?rlkey=w08556jq38alb55khwjkbn8hu&st=vff08yyj&dl=0">video</a>-->
                         <p></p>
                         <p>A novel AR mirror system that allows a seamless, perspective-aligned user experience, which is enabled by
                             placing the camera behind a transparent display.</p>
@@ -216,8 +256,6 @@
                         <br>
                         <em>SIGGRAPH</em>, 2024
                         <br>
-                        <!--                <a href="http://player.bilibili.com/player.html?aid=22575605&cid=37440336&page=1">demo</a> /-->
-                        <!--                <a href="https:">code</a> /-->
                         <a href="https://arxiv.org/abs/2401.15977">arXiv</a> /
                         <a href="https://github.com/G-U-N/Motion-I2V">code</a>
                         <p></p>
@@ -300,8 +338,6 @@
                         <br>
                         <em>Arxiv</em>, 2023
                         <br>
-                        <!--                <a href="http://player.bilibili.com/player.html?aid=22575605&cid=37440336&page=1">demo</a> /-->
-                        <!--                <a href="https:">code</a> /-->
                         <a href="https://arxiv.org/abs/2303.02881">arXiv</a> /
                         <a href="https://github.com/zhangyi-3/kbnet">code</a>
                         <p></p>
@@ -348,7 +384,6 @@
                         <br>
                         <em>CVPR</em>, 2023
                         <br>
-                        <!--                <a href="http://player.bilibili.com/player.html?aid=22575605&cid=37440336&page=1">demo</a> /-->
                         <a href="https://arxiv.org/abs/2206.10810">arXiv</a> /
                         <a href="https://github.com/dasongli1/grouped_shift_net">code</a> /
                         <a href="https://dasongli1.github.io/publication/grouped-shift-net/">project</a>
@@ -396,10 +431,7 @@
                         <br>
                         <em>IJCV, 2022</em>
                         <br>
-                        <!--                <a href="http://player.bilibili.com/player.html?aid=22575605&cid=37440336&page=1">demo</a> /-->
-                        <!--                <a href="https:">code</a> /-->
                         <a href="https://arxiv.org/abs/2205.04721">arXiv</a>
-                        <!--                        <a href="https://github.com/zhangyi-3/noise-synthesis">code</a>-->
                         <p></p>
                         <p>A practical low-light imaging system for burst raw image denoising.
                             It has been deployed to some commercial smartphones.</p>
@@ -439,10 +471,8 @@
                         <br>
                         <em>ECCV</em>, 2022
                         <br>
-                        <!--                <a href="http://player.bilibili.com/player.html?aid=22575605&cid=37440336&page=1">demo</a> /-->
                         <a href="https://arxiv.org/abs/2208.05244">arXiv</a> /
                         <a href="https://github.com/dasongli1/Learning_degradation/">code</a>
-                        <!--                        <a href="https://github.com/zhangyi-3/blur_representation">SenseNoise dataset</a>-->
                         <p></p>
                         <p>Learning degradation representations for blurry images. The learned degradation
                             representation
@@ -485,7 +515,6 @@
                         <br>
                         <em>CVPR</em>, 2022
                         <br>
-                        <!--                <a href="http://player.bilibili.com/player.html?aid=22575605&cid=37440336&page=1">demo</a> /-->
                         <a href="https://arxiv.org/abs/2111.14358">arXiv</a> /
                         <a href="https://github.com/zhangyi-3/IDR">code</a> /
                         <a href="https://github.com/zhangyi-3/IDR">SenseNoise dataset</a>
@@ -528,8 +557,6 @@
                         <br>
                         <em>ICCV</em>, 2021
                         <br>
-                        <!--                <a href="http://player.bilibili.com/player.html?aid=22575605&cid=37440336&page=1">demo</a> /-->
-                        <!--                <a href="https:">code</a> /-->
                         <a href="https://arxiv.org/abs/2110.04756">arXiv</a> /
                         <a href="https://github.com/zhangyi-3/noise-synthesis">code</a>
                         <p></p>
@@ -568,7 +595,6 @@
                         <a href="">Zhen-Jia Pang</a>,
                         <a href="">Ruo-Ze Liu</a>,
                         <a href="">Zhou-Yu Meng</a>,
-                        <!--                <br>-->
                         <strong>Yi Zhang</strong>,
                         <a href="http://www.lamda.nju.edu.cn/yuy/">Yang Yu</a>,
                         <a href="">Tong Lu</a>
@@ -577,7 +603,6 @@
                         <br>
                         <a href="https://arxiv.org/abs/1809.09095">arXiv</a> /
                         <a href="https://www.bilibili.com/video/av22575605?zw">demo</a>
-                        <!--                                <a href="https:">code</a> /-->
                         <p></p>
                         <p>We achieve over 93% winning rate of Protoss against the most difficult non-cheating
                             built-in AI (level-7) of Terran,
@@ -611,7 +636,6 @@
                     <p>
                     </p>
                     <li>Research intern at Snap Research, 2023.3 ~ 2023.6</li>
-<!--                    <li>Research intern at SenseTime Research, 2021-2022</li>-->
                     <li>Research intern at LAMDA Group, 2017 ~ 2018</li>
                     <p></p>
                 </td>
@@ -621,24 +645,6 @@
             <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
                 <tbody>
 
-
-                <!--        <tr>-->
-                <!--            <td>-->
-                <!--                <heading>Service</heading>-->
-                <!--            </td>-->
-                <!--        </tr>-->
-                <!--        </tbody></table>-->
-                <!--        <table width="100%" align="center" border="0" cellpadding="20"><tbody>-->
-                <!--        <tr>-->
-                <!--            <td style="padding:20px;width:25%;vertical-align:middle"><img src=""></td>-->
-                <!--            <td width="75%" valign="center">-->
-                <!--                <a href="">Digital Image Processing ELEG4512 Spring 2021</a>-->
-                <!--                <br><br>-->
-                <!--&lt;!&ndash;                <a href="http://cvpr2019.thecvf.com/area_chairs">Area Chair, CVPR 2019</a>&ndash;&gt;-->
-                <!--&lt;!&ndash;                <br><br>&ndash;&gt;-->
-                <!--&lt;!&ndash;                <a href="http://cvpr2018.thecvf.com/organizers/area_chairs">Area Chair, CVPR 2018</a>&ndash;&gt;-->
-                <!--            </td>-->
-                <!--        </tr>-->
 
                 <td width="100%" valign="middle">
                     <heading>Honors</heading>
@@ -662,7 +668,6 @@
                             The website template was borrowed from <a
                                 href="https://github.com/jonbarron/jonbarron_website">here</a>.
                             <br>
-                            <!--                    Also, consider using <a href="https://leonidk.com/">Leonid Keselman</a>'s <a href="https://github.com/leonidk/new_website">Jekyll fork</a> of this page.-->
                         </p>
                     </td>
                 </tr>

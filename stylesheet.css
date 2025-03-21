@@ -66,12 +66,19 @@
 a {
   color: #1772d0;
   text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
 }
 
 a:focus,
 a:hover {
   color: #f09228;
   text-decoration: none;
+  transform: translateY(-1px);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body,
@@ -92,12 +99,29 @@ strong {
 heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  display: block;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(to right, #1772d0, rgba(23, 114, 208, 0.2));
+  border-radius: 3px;
 }
 
 papertitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 16px;
-  font-weight: 700
+  font-weight: 700;
+  color: #222;
 }
 
 name {
@@ -109,23 +133,129 @@ name {
   width: 180px;
   height: 180px;
   position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
 .two {
   width: 180px;
   height: 180px;
   position: absolute;
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity .3s ease-in-out;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .fade {
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity .3s ease-in-out;
 }
 
 span.highlight {
   background-color: #ffffd0;
+}
+
+/* Mobile Responsive Styles */
+@media only screen and (max-width: 768px) {
+  /* General adjustments */
+  body, td, th, tr, p, a {
+    font-size: 14px;
+  }
+  
+  heading {
+    font-size: 20px;
+  }
+  
+  name {
+    font-size: 24px;
+  }
+
+  /* Make images responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Fix the image comparison slider for mobile */
+  img-comparison-slider {
+    max-width: 100%;
+    height: auto !important;
+  }
+  
+  /* Adjust the image hover effects for touch devices */
+  .one, .two {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Fix for image hover overlays */
+  .one img, .two img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Project sections */
+  papertitle {
+    font-size: 15px;
+  }
+  
+  /* Better spacing for links */
+  p a {
+    margin-right: 5px;
+  }
+
+  /* Adjust section separators for mobile */
+  heading::after {
+    width: 40px;
+    height: 2px;
+  }
+  
+  /* Make links more tappable on mobile */
+  a {
+    padding: 2px 0;
+  }
+}
+
+/* Smaller mobile devices */
+@media only screen and (max-width: 480px) {
+  body, td, th, tr, p, a {
+    font-size: 13px;
+  }
+  
+  heading {
+    font-size: 18px;
+  }
+  
+  name {
+    font-size: 20px;
+  }
+  
+  td[style*="padding:2.5%"] {
+    padding: 5px !important;
+  }
+}
+
+/* Project section styling */
+tr[onmouseout] {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  margin-bottom: 15px;
+}
+
+tr[onmouseout]:hover {
+  background-color: rgba(0,0,0,0.01);
+}
+
+/* Research item styling */
+table[style*="width:100%;border:0px"] {
+  margin-bottom: 30px;
+}
+
+/* Better spacing for the project items */
+tr[onmouseout] td[style*="padding:20px;width:75%"] {
+  padding-left: 30px !important;
 }
