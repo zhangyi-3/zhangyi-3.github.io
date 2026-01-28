@@ -146,7 +146,7 @@
                             <a href="https://scholar.google.com/citations?user=zQmprrUAAAAJ" style="margin:0 5px;display:inline-block;padding:5px 10px;border-radius:4px;background-color:rgba(0,0,0,0.02);transition:all 0.3s ease;">Google Scholar</a>
                             &nbsp/&nbsp
                             <a href="https://github.com/zhangyi-3/" style="margin:0 5px;display:inline-block;padding:5px 10px;border-radius:4px;background-color:rgba(0,0,0,0.02);transition:all 0.3s ease;">Github</a>&nbsp/&nbsp
-                            <a href="https://mycuhk-my.sharepoint.com/:b:/g/personal/1155135732_link_cuhk_edu_hk/EXaX_9PaMFJJtoLZT2zDWHMBF0kSxNFg8ur7D-ynYdR5cg?e=hv7bM5" style="margin:0 5px;display:inline-block;padding:5px 10px;border-radius:4px;background-color:rgba(0,0,0,0.02);transition:all 0.3s ease;">CV</a>
+                            <a href="https://drive.google.com/file/d/1Ru91vvckCTydahj-sDqf1zwzZY4V347d/view?usp=sharing" style="margin:0 5px;display:inline-block;padding:5px 10px;border-radius:4px;background-color:rgba(0,0,0,0.02);transition:all 0.3s ease;">CV</a>
                         </p>
                     </td>
                     <td style="padding:2.5%;width:30%;max-width:30%">
@@ -173,12 +173,100 @@
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
                 <tbody>
 
+                    <tr onmouseout="neiGRPO_stop()" onmouseover="neiGRPO_start()">
+                        <td style="padding:20px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <div class="two" id="neiGRPO_image" style="opacity: 0;">
+                                    <img style="width:100%" src="images/neiGRPO_after.jpg"></div>
+                                <img style="width:100%" src="images/neiGRPO_before.jpg">
+                            </div>
+                            <script type="text/javascript">
+                                function neiGRPO_start() {
+                                    document.getElementById('neiGRPO_image').style.opacity = "1";
+                                }
+    
+                                function neiGRPO_stop() {
+                                    document.getElementById('neiGRPO_image').style.opacity = "0";
+                                }
+    
+                                neiGRPO_stop()
+                            </script>
+                        </td>
+                        <td style="padding:20px;width:75%;vertical-align:middle">
+                            <a href="https://dl.acm.org/doi/abs/10.1145/3687995">
+                                <papertitle>Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models</papertitle>
+                            </a>
+                            <br>
+                            <a href="https://scholar.google.com/citations?user=f5MTTy4AAAAJ">Dailan He</a>,
+                            <a href="">Guanlin Feng</a>,
+                            <a href="https://xingtongge.github.io/">Xingtong Ge</a>,
+                            <a href="https://scholar.google.com/citations?user=P3BUrBQAAAAJ&hl=zh-TW">Yazhe Niu</a>,
+                            <strong>Yi Zhang</strong>,
+                            <a href="https://mabingqi.github.io/">Bingqi Ma</a>,
+                            <a href="https://scholar.google.com/citations?user=Bd3v08QAAAAJ&hl=zh-CN&oi=ao">Guanglu Song</a>,
+                            <a href="https://liuyu.us/">Yu Liu</a>,
+                            <a href="https://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a>
+                            <br>
+                            <em>Arxiv</em>, 2026
+                            <br>
+                            <a href="https://arxiv.org/pdf/2511.16955">arXiv</a> 
+                            <p></p>
+                            <p>Neighbor GRPO enables GRPO for flow matching models by bypassing SDEs entirely. 
+                                By reinterpreting SDE-based GRPO from a distance optimization perspective, we generate diverse trajectories via perturbed initial noise 
+                                and optimize using a distance-based surrogate policy, preserving ODE efficiency while outperforming SDE-based methods.</p>
+                        </td>
+                    </tr>
+
+                    <tr onmouseout="senseflow_stop()" onmouseover="senseflow_start()">
+                        <td style="padding:20px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <div class="two" id="senseflow_image" style="opacity: 0;">
+                                    <img style="width:100%" src="images/senseflow_after.jpg"></div>
+                                <img style="width:100%" src="images/senseflow_before.jpg">
+                            </div>
+                            <script type="text/javascript">
+                                function senseflow_start() {
+                                    document.getElementById('senseflow_image').style.opacity = "1";
+                                }
+    
+                                function senseflow_stop() {
+                                    document.getElementById('senseflow_image').style.opacity = "0";
+                                }
+    
+                                senseflow_stop()
+                            </script>
+                        </td>
+                        <td style="padding:20px;width:75%;vertical-align:middle">
+                            <a href="https://dl.acm.org/doi/abs/10.1145/3687995">
+                                <papertitle>SenseFlow: Scaling Distribution Matching for Flow-based Text-to-Image Distillation</papertitle>
+                            </a>
+                            <br>
+                            <a href="https://xingtongge.github.io/">Xingtong Ge</a>,
+                            <a href="">Xin Zhang</a>,
+                            <a href="https://tongdaxu.github.io/">Tongda Xu</a>,
+                            <strong>Yi Zhang</strong>,
+                            <a href="https://xinjie-q.github.io/"> Xinjie Zhang</a>,
+                            <a href="https://yanwang202199.github.io/">Yan Wang</a>,
+                            <a href="https://eejzhang.people.ust.hk/">Jun Zhang</a>
+                            <br>
+                            <em>ICLR</em>, 2026
+                            <br>
+                            <a href="https://arxiv.org/pdf/2506.00523">arXiv</a> /
+                            <a href="https://huggingface.co/domiso/SenseFlow">huggingface</a> /
+                            <a href="https://github.com/XingtongGe/SenseFlow">code</a>
+                            <p></p>
+                            <p>We address convergence difficulties of Distribution Matching Distillation (DMD) on large-scale flow-based models. 
+                                By proposing implicit distribution alignment (IDA) and intra-segment guidance (ISG), SenseFlow enables DMD to converge for SD 3.5 and FLUX.1 dev, 
+                                achieving superior distillation performance for both diffusion and flow-matching models.</p>
+                        </td>
+                    </tr>
+
                     <tr onmouseout="ccm_stop()" onmouseover="ccm_start()">
                     <td style="padding:20px;width:25%;vertical-align:middle">
                         <div class="one">
                             <div class="two" id="ccm_image" style="opacity: 0;">
-                                <img style="width:100%" src="images/ccm.jpg"></div>
-                            <img style="width:100%" src="images/ccm.jpg">
+                                <img style="width:100%" src="images/ccm_after.jpg"></div>
+                            <img style="width:100%" src="images/ccm_before.jpg">
                         </div>
                         <script type="text/javascript">
                             function ccm_start() {
