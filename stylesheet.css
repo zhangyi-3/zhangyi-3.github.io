@@ -81,6 +81,26 @@ html {
   scroll-behavior: smooth;
 }
 
+.hiring-callout {
+  margin: 12px 0 18px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(220, 38, 38, 0.055);
+  border: 1px solid rgba(220, 38, 38, 0.14);
+  color: #6b1b1b;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.hiring-callout a {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.hiring-callout a:hover {
+  color: #ef4444;
+}
+
 body,
 td,
 th,
@@ -223,6 +243,11 @@ span.highlight {
 /* Smaller mobile devices */
 @media only screen and (max-width: 480px) {
   body, td, th, tr, p, a {
+    font-size: 13px;
+  }
+
+  .hiring-callout {
+    padding: 10px 12px;
     font-size: 13px;
   }
   
