@@ -220,6 +220,49 @@
                         </td>
                     </tr>
 
+                    <tr onmouseout="BlendAware_stop()" onmouseover="BlendAware_start()">
+                        <td style="padding:20px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <div class="two" id="BlendAware_image" style="opacity: 0;">
+                                    <img style="width:100%" src="images/BlendAware_after.jpg"></div>
+                                <img style="width:100%" src="images/BlendAware_before.jpg">
+                            </div>
+                            <script type="text/javascript">
+                                function BlendAware_start() {
+                                    document.getElementById('BlendAware_image').style.opacity = "1";
+                                }
+    
+                                function BlendAware_stop() {
+                                    document.getElementById('BlendAware_image').style.opacity = "0";
+                                }
+    
+                                BlendAware_stop()
+                            </script>
+                        </td>
+                        <td style="padding:20px;width:75%;vertical-align:middle">
+                            <a href="https://dl.acm.org/doi/abs/10.1145/3687995">
+                                <papertitle>Blend-Aware Latent Diffusion: Mitigating Stitched Seams in Image Inpainting</papertitle>
+                            </a>
+                            <br>
+                            <a href="">Yunpeng Liu</a>,
+                            <a href="">Xingzhong Hou</a>,
+                            <a href="">Jie Wu</a>,
+                            <a href="https://scholar.google.com/citations?user=-zEM0ycAAAAJ&hl=zh-CN&oi=ao">Boxiao Liu</a>,
+                            <strong>Yi Zhang</strong>,
+                            
+                            <a href="https://scholar.google.com/citations?user=Bd3v08QAAAAJ&hl=zh-CN&oi=ao">Guanglu Song</a>,
+                            <a href="https://liuyu.us/">Yu Liu</a>,
+                            <a href="">Changyao Tian</a>,
+                            <a href="">Gen Luo</a>,
+                            <a href="">Haihang You</a>
+                            <br>
+                            <em>CVPR</em>, 2026
+                            <br>
+                            <a href="https://openreview.net/pdf?id=47l2z9Tgk6">arXiv</a> 
+                            <p></p>
+                            <p>We propose Blend-Aware Latent Diffusion (BlendRecon + BlendGen ) to address boundary discontinuity and content inconsistency in diffusion-based inpainting, mitigating stitched seams and improving quality.</p>
+                    </tr>
+
                     <tr onmouseout="senseflow_stop()" onmouseover="senseflow_start()">
                         <td style="padding:20px;width:25%;vertical-align:middle">
                             <div class="one">
