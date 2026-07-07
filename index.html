@@ -6,10 +6,21 @@
     <title>Zhang Yi</title>
 
     <meta name="author" content="Zhang Yi">
+    <meta name="description" content="Zhang Yi — Senior Researcher at Vivix AI. Research on diffusion models, video generation, and computational photography. SIGGRAPH Asia 2024 Best Paper Award.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zhang Yi">
+    <meta property="og:description" content="Senior Researcher at Vivix AI. Diffusion models, video generation, computational photography.">
+    <meta property="og:image" content="https://zhangyi-3.github.io/images/zhangyi3_circle.png">
+    <meta property="og:url" content="https://zhangyi-3.github.io/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Zhang Yi">
+    <meta name="twitter:description" content="Senior Researcher at Vivix AI. Diffusion models, video generation, computational photography.">
+    <meta name="twitter:image" content="https://zhangyi-3.github.io/images/zhangyi3_circle.png">
+
+    <link rel="icon" type="image/png" href="images/zhangyi3_circle.png">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <!--    <link rel="icon" type="image/png" href="images/seal_icon.png">-->
     
     <!-- Mobile detection script -->
     <script type="text/javascript">
@@ -175,6 +186,109 @@
             </table>
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
                 <tbody>
+
+                    <tr onmouseout="salt_stop()" onmouseover="salt_start()">
+                        <td style="padding:20px;width:25%;vertical-align:middle">
+                            <div style="width:180px; height:180px; border-radius:5px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.1); background:#000; display:flex; flex-direction:column;">
+                                <div style="text-align:center; font-weight:bold; font-size:12px; color:#fff; background:rgba(0,0,0,0.75); height:22px; line-height:22px; position:relative;">
+                                    <span id="salt_label_before" style="position:absolute; left:0; right:0; transition: opacity 0.25s;">Salt (ours)</span>
+                                    <span id="salt_label_after" style="position:absolute; left:0; right:0; opacity:0; transition: opacity 0.25s;">Causal Forcing</span>
+                                </div>
+                                <div style="flex:1; position:relative;">
+                                    <video style="width:100%; height:100%; object-fit:contain; display:block;" autoplay loop muted playsinline preload="metadata">
+                                        <source src="images/salt_hevc.mp4" type="video/mp4">
+                                    </video>
+                                    <div id="salt_image" style="position:absolute; inset:0; opacity:0; transition: opacity 0.3s;">
+                                        <video style="width:100%; height:100%; object-fit:contain; display:block; background:#000;" loop muted playsinline preload="metadata">
+                                            <source src="images/causal_hevc.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                function salt_start() {
+                                    var videoContainer = document.getElementById('salt_image');
+                                    videoContainer.style.opacity = "1";
+                                    document.getElementById('salt_label_before').style.opacity = "0";
+                                    document.getElementById('salt_label_after').style.opacity = "1";
+                                    var video = videoContainer.querySelector('video');
+                                    if (video) {
+                                        video.play();
+                                    }
+                                }
+
+                                function salt_stop() {
+                                    var videoContainer = document.getElementById('salt_image');
+                                    videoContainer.style.opacity = "0";
+                                    document.getElementById('salt_label_before').style.opacity = "1";
+                                    document.getElementById('salt_label_after').style.opacity = "0";
+                                    var video = videoContainer.querySelector('video');
+                                    if (video) {
+                                        video.pause();
+                                        video.currentTime = 0;
+                                    }
+                                }
+
+                                salt_stop()
+                            </script>
+                        </td>
+                        <td style="padding:20px;width:75%;vertical-align:middle">
+                            <a href="https://arxiv.org/abs/2604.03118">
+                                <papertitle>Salt: Self-Consistent Distribution Matching with Cache-Aware Training for Fast Video Generation</papertitle>
+                            </a>
+                            <br>
+                            <a href="https://xingtongge.github.io/">Xingtong Ge</a>,
+                            <strong>Yi Zhang</strong>,
+                            <a href="">Yushi Huang</a>,
+                            <a href="https://scholar.google.com/citations?user=f5MTTy4AAAAJ">Dailan He</a>,
+                            <a href="">Xiahong Wang</a>,
+                            <a href="https://mabingqi.github.io/">Bingqi Ma</a>,
+                            <a href="https://scholar.google.com/citations?user=Bd3v08QAAAAJ&hl=zh-CN&oi=ao">Guanglu Song</a>,
+                            <a href="https://liuyu.us/">Yu Liu</a>,
+                            <a href="">Jun Zhang</a>
+                            <br>
+                            <em>ECCV</em>, 2026
+                            <br>
+                            <a href="https://arxiv.org/abs/2604.03118">arXiv</a> /
+                            <a href="https://xingtongge.github.io/Salt">project page</a>
+                            <p></p>
+                            <p>Salt distills video generators down to 2–4 NFEs by combining Self-Consistent Distribution
+                                Matching Distillation (SC-DMD) with Cache-Distribution-Aware training, treating the KV cache
+                                as a quality-parameterized condition. It improves low-NFE quality on both non-autoregressive
+                                (Wan 2.1) and real-time autoregressive (Self-Forcing) backbones.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding:20px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <img style="width:100%" src="images/arcopo.jpeg" loading="lazy">
+                            </div>
+                        </td>
+                        <td style="padding:20px;width:75%;vertical-align:middle">
+                            <a href="https://arxiv.org/pdf/2603.17461">
+                                <papertitle>AR-CoPO: Align Autoregressive Video Generation with Contrastive Policy Optimization</papertitle>
+                            </a>
+                            <br>
+                            <a href="https://scholar.google.com/citations?user=f5MTTy4AAAAJ">Dailan He</a>,
+                            <a href="">Guanlin Feng</a>,
+                            <a href="https://xingtongge.github.io/">Xingtong Ge</a>,
+                            <strong>Yi Zhang</strong>,
+                            <a href="https://mabingqi.github.io/">Bingqi Ma</a>,
+                            <a href="https://scholar.google.com/citations?user=Bd3v08QAAAAJ&hl=zh-CN&oi=ao">Guanglu Song</a>,
+                            <a href="https://liuyu.us/">Yu Liu</a>,
+                            <a href="https://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a>
+                            <br>
+                            <em>ECCV</em>, 2026
+                            <br>
+                            <a href="https://arxiv.org/pdf/2603.17461">arXiv</a>
+                            <p></p>
+                            <p>AR-CoPO adapts Neighbor GRPO to few-step streaming autoregressive video generators.
+                                By forking neighborhood candidates at a randomly chosen chunk and blending on-policy exploration
+                                with a replay buffer of reference rollouts, it delivers genuine RLHF alignment gains on Self-Forcing
+                                without falling into reward hacking.</p>
+                        </td>
+                    </tr>
 
                     <tr onmouseout="neiGRPO_stop()" onmouseover="neiGRPO_start()">
                         <td style="padding:20px;width:25%;vertical-align:middle">
@@ -383,7 +497,7 @@
                         <a href="https://scholar.google.com/citations?user=3pZs3j0AAAAJ&hl=en">Shree Nayar</a>,
                         <a href="">Gurunandan Krishnan</a>
                         <br>
-                        <em>SIGGRAPH Asia</em>, 2024,  &nbsp; (Journal)  &nbsp; <font color="red"><strong>(Best Paper Award)</strong></font>
+                        <em>SIGGRAPH Asia</em>, 2024,  &nbsp; (Journal)  &nbsp; <strong style="color:#c33;">(Best Paper Award)</strong>
                         <br>
                         <a href="https://dl.acm.org/doi/abs/10.1145/3687995">arXiv</a> /
                         <a href="https://jianwang-cmu.github.io/24ARmirror/supp.pdf">supplement</a> /
@@ -745,40 +859,13 @@
                 </tr>
 
 
-                <tr onmouseout="starcraft_stop()" onmouseover="starcraft_start()">
+                <tr>
                     <td style="padding:20px;width:25%;vertical-align:middle">
                         <div class="one">
-                            <div class="two" id="starcraft_image" style="opacity: 0;">
-                                <video style="width:100%; height:100%; object-fit:cover;" autoplay loop muted playsinline>
-                                    <source src="images/starcraft_after.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <video style="width:100%; height:100%; object-fit:cover;" autoplay loop muted playsinline>
+                            <video style="width:100%; height:100%; object-fit:cover;" autoplay loop muted playsinline preload="metadata">
                                 <source src="images/starcraft_after.mp4" type="video/mp4">
                             </video>
                         </div>
-                        <script type="text/javascript">
-                            function starcraft_start() {
-                                var videoContainer = document.getElementById('starcraft_image');
-                                videoContainer.style.opacity = "1";
-                                var video = videoContainer.querySelector('video');
-                                if (video) {
-                                    video.play();
-                                }
-                            }
-
-                            function starcraft_stop() {
-                                var videoContainer = document.getElementById('starcraft_image');
-                                videoContainer.style.opacity = "0";
-                                var video = videoContainer.querySelector('video');
-                                if (video) {
-                                    video.pause();
-                                    video.currentTime = 0;
-                                }
-                            }
-
-                            starcraft_stop()
-                        </script>
                     </td>
                     <td style="padding:20px;width:75%;vertical-align:middle">
                         <a href="https://arxiv.org/abs/1809.09095">
@@ -792,7 +879,7 @@
                         <a href="http://www.lamda.nju.edu.cn/yuy/">Yang Yu</a>,
                         <a href="">Tong Lu</a>
                         <br>
-                        <em>AAAI</em>, 2019 &nbsp <font color="red"><strong>(Oral)</strong></font>
+                        <em>AAAI</em>, 2019 &nbsp <strong style="color:#c33;">(Oral)</strong>
                         <br>
                         <a href="https://arxiv.org/abs/1809.09095">arXiv</a> /
                         <a href="https://www.bilibili.com/video/av22575605?zw">demo</a>
