@@ -187,6 +187,239 @@
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
                 <tbody>
 
+                    <tr onmouseout="rigen_stop()" onmouseover="rigen_start()">
+                        <td style="padding:20px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <div class="two" id="rigen_image" style="opacity: 0;">
+                                    <img style="width:100%" src="images/rigen_after.jpg" loading="lazy"></div>
+                                <img style="width:100%" src="images/rigen.jpg" loading="lazy">
+                            </div>
+                            <script type="text/javascript">
+                                function rigen_start() {
+                                    document.getElementById('rigen_image').style.opacity = "1";
+                                }
+
+                                function rigen_stop() {
+                                    document.getElementById('rigen_image').style.opacity = "0";
+                                }
+
+                                rigen_stop()
+                            </script>
+                        </td>
+                        <td style="padding:20px;width:75%;vertical-align:middle">
+                            <a href="https://arxiv.org/abs/2610.20811">
+                                <papertitle>RIGen: Beyond Action Following with Reciprocal Interaction in Generative Gameplay</papertitle>
+                            </a>
+                            <br>
+                            <a href="">Mengfei Li</a>,
+                            <strong>Yi Zhang</strong>,
+                            <a href="https://xingtongge.github.io/">Xingtong Ge</a>,
+                            <a href="">Lunjie Zhu</a>,
+                            <a href="">Fangyu Lin</a>,
+                            <a href="">Peng Li</a>,
+                            <a href="https://scholar.google.com/citations?user=Bd3v08QAAAAJ&hl=zh-CN&oi=ao">Guanglu Song</a>,
+                            <a href="https://liuyu.us/">Yu Liu</a>,
+                            <a href="">Wei Xue</a>,
+                            <a href="">Wenhan Luo</a>,
+                            <a href="">Yike Guo</a>
+                            <br>
+                            <em>arXiv</em>, 2026
+                            <br>
+                            <a href="https://arxiv.org/abs/2610.20811">arXiv</a> /
+                            <a href="https://murphylmf.github.io/RIGen/">project page</a> /
+                            <a href="https://github.com/murphylmf/RIGen">code</a>
+                            <p></p>
+                            <p>RIGen (Reciprocally Interactive Generation) goes beyond action following in generative gameplay:
+                                it combines persistent game state and configurable rules, contextual interaction reasoning, and action-conditioned audio-video generation,
+                                so that player actions have lasting consequences and the generated world acts on its own state.
+                                Trained on a large Xonotic gameplay dataset, it powers RIGen-Arena, an interactive generative FPS prototype.</p>
+                        </td>
+                    </tr>
+
+                    <tr onmouseout="radian_stop()" onmouseover="radian_start()">
+                        <td style="padding:20px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <div class="two" id="radian_image" style="opacity: 0;">
+                                    <img style="width:100%" src="images/radian_after.jpg" loading="lazy"></div>
+                                <img style="width:100%" src="images/radian.jpg" loading="lazy">
+                            </div>
+                            <script type="text/javascript">
+                                function radian_start() {
+                                    document.getElementById('radian_image').style.opacity = "1";
+                                }
+
+                                function radian_stop() {
+                                    document.getElementById('radian_image').style.opacity = "0";
+                                }
+
+                                radian_stop()
+                            </script>
+                        </td>
+                        <td style="padding:20px;width:75%;vertical-align:middle">
+                            <a href="https://arxiv.org/abs/2609.40037">
+                                <papertitle>Enhancing Autoregressive Video Generation via Representation Adversarial Distillation</papertitle>
+                            </a>
+                            <br>
+                            <a href="">Fangyu Lin</a>,
+                            <a href="https://xingtongge.github.io/">Xingtong Ge</a>,
+                            <a href="">Lunjie Zhu</a>,
+                            <strong>Yi Zhang</strong>,
+                            <a href="">Zhening Liu</a>,
+                            <a href="">Tianhang Wang</a>,
+                            <a href="">Mengfei Li</a>,
+                            <a href="">Yumeng Zhang</a>,
+                            <a href="https://scholar.google.com/citations?user=Bd3v08QAAAAJ&hl=zh-CN&oi=ao">Guanglu Song</a>,
+                            <a href="https://liuyu.us/">Yu Liu</a>,
+                            <a href="https://eejzhang.people.ust.hk/">Jun Zhang</a>
+                            <br>
+                            <em>arXiv</em>, 2026
+                            <br>
+                            <a href="https://arxiv.org/abs/2609.40037">arXiv</a>
+                            <p></p>
+                            <p>Radian adds real-data adversarial supervision to on-policy DMD for few-step autoregressive video generation.
+                                Discriminator heads operate on frozen visual foundation model features of sparsely decoded rollouts,
+                                curbing error accumulation and improving perceptual quality on Wan2.1 for chunk-wise, frame-wise, and minute-long generation
+                                at zero extra inference cost.</p>
+                        </td>
+                    </tr>
+
+                    <tr onmouseout="saf_stop()" onmouseover="saf_start()">
+                        <td style="padding:20px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <div class="two" id="saf_image" style="opacity: 0;">
+                                    <img style="width:100%" src="images/saf_after.jpg" loading="lazy"></div>
+                                <img style="width:100%" src="images/saf.jpg" loading="lazy">
+                            </div>
+                            <script type="text/javascript">
+                                function saf_start() {
+                                    document.getElementById('saf_image').style.opacity = "1";
+                                }
+
+                                function saf_stop() {
+                                    document.getElementById('saf_image').style.opacity = "0";
+                                }
+
+                                saf_stop()
+                            </script>
+                        </td>
+                        <td style="padding:20px;width:75%;vertical-align:middle">
+                            <a href="https://arxiv.org/abs/2609.38114">
+                                <papertitle>Self-Aligned Forcing: Streaming Video Diffusion with Differentiable Noisy History</papertitle>
+                            </a>
+                            <br>
+                            <a href="">Weiqiang Wang</a>,
+                            <a href="">Zhuokun Chen</a>,
+                            <a href="">Yusheng Dai</a>,
+                            <a href="">Boying Li</a>,
+                            <strong>Yi Zhang</strong>,
+                            <a href="">Hossein Rahmani</a>,
+                            <a href="">Qiuhong Ke</a>,
+                            <a href="">Jianfei Cai</a>
+                            <br>
+                            <em>arXiv</em>, 2026
+                            <br>
+                            <a href="https://arxiv.org/abs/2609.38114">arXiv</a> /
+                            <a href="https://anonymous.4open.science/w/self-aligned-forcing/">project page</a>
+                            <p></p>
+                            <p>Self-Aligned Forcing aligns each block's K/V history to the noise level of the block being denoised and keeps it differentiable,
+                                so a whole denoising stage runs in one causally masked pass. It trains up to 1.8x faster with less memory,
+                                reaches 49.1 FPS on 4 GPUs, and better balances visual quality and motion in long-horizon streaming generation.</p>
+                        </td>
+                    </tr>
+
+                    <tr onmouseout="saltpp_stop()" onmouseover="saltpp_start()">
+                        <td style="padding:20px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <div class="two" id="saltpp_image" style="opacity: 0;">
+                                    <img style="width:100%" src="images/saltpp_after.jpg" loading="lazy"></div>
+                                <img style="width:100%" src="images/saltpp.jpg" loading="lazy">
+                            </div>
+                            <script type="text/javascript">
+                                function saltpp_start() {
+                                    document.getElementById('saltpp_image').style.opacity = "1";
+                                }
+
+                                function saltpp_stop() {
+                                    document.getElementById('saltpp_image').style.opacity = "0";
+                                }
+
+                                saltpp_stop()
+                            </script>
+                        </td>
+                        <td style="padding:20px;width:75%;vertical-align:middle">
+                            <a href="https://arxiv.org/abs/2609.36995">
+                                <papertitle>Salt++: Context-Aligned Post-Training for Few-Step Streaming Multimodal Generation</papertitle>
+                            </a>
+                            <br>
+                            <a href="https://xingtongge.github.io/">Xingtong Ge</a>,
+                            <a href="">Yutong Wang</a>,
+                            <a href="">Lunjie Zhu</a>,
+                            <a href="">Haitao Lin</a>,
+                            <a href="">Fangyu Lin</a>,
+                            <a href="">Yushi Huang</a>,
+                            <a href="">Xin Zhang</a>,
+                            <strong>Yi Zhang</strong>,
+                            <a href="https://liuyu.us/">Yu Liu</a>,
+                            <a href="https://eejzhang.people.ust.hk/">Jun Zhang</a>
+                            <br>
+                            <em>arXiv</em>, 2026
+                            <br>
+                            <a href="https://arxiv.org/abs/2609.36995">arXiv</a> /
+                            <a href="https://xingtongge.github.io/Saltpp">project page</a>
+                            <p></p>
+                            <p>Salt++ is a two-stage post-training framework for few-step streaming audio-video generation.
+                                Causal Self-Flow supervises contextual representations directly, and context-aligned AR DMD shares one causal context
+                                across generator, fake score, and real score. In the same 4-step causal setting it improves visual quality by 57% and motion quality by 45% over OmniForcing,
+                                and scales to 4-step 1664×960 generation.</p>
+                        </td>
+                    </tr>
+
+                    <tr onmouseout="omni_stop()" onmouseover="omni_start()">
+                        <td style="padding:20px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <div class="two" id="omni_image" style="opacity: 0;">
+                                    <img style="width:100%" src="images/omni_after.jpg" loading="lazy"></div>
+                                <img style="width:100%" src="images/omni_liveavatar.jpg" loading="lazy">
+                            </div>
+                            <script type="text/javascript">
+                                function omni_start() {
+                                    document.getElementById('omni_image').style.opacity = "1";
+                                }
+
+                                function omni_stop() {
+                                    document.getElementById('omni_image').style.opacity = "0";
+                                }
+
+                                omni_stop()
+                            </script>
+                        </td>
+                        <td style="padding:20px;width:75%;vertical-align:middle">
+                            <a href="https://arxiv.org/abs/2608.13602">
+                                <papertitle>Omni-LiveAvatar: Minute-Level Real-Time Streaming Joint Audio-Video Avatar Generation</papertitle>
+                            </a>
+                            <br>
+                            <a href="">Lunjie Zhu</a>,
+                            <a href="https://xingtongge.github.io/">Xingtong Ge</a>,
+                            <a href="">Fangyu Lin</a>,
+                            <strong>Yi Zhang</strong>,
+                            <a href="">Zhening Liu</a>,
+                            <a href="">Mengfei Li</a>,
+                            <a href="">Yumeng Zhang</a>,
+                            <a href="https://scholar.google.com/citations?user=Bd3v08QAAAAJ&hl=zh-CN&oi=ao">Guanglu Song</a>,
+                            <a href="https://liuyu.us/">Yu Liu</a>,
+                            <a href="https://eejzhang.people.ust.hk/">Jun Zhang</a>
+                            <br>
+                            <em>arXiv</em>, 2026
+                            <br>
+                            <a href="https://arxiv.org/abs/2608.13602">arXiv</a> /
+                            <a href="https://github.com/Aoko955/Omni-LiveAvatar">code</a>
+                            <p></p>
+                            <p>Omni-LiveAvatar is the first framework for minute-level, real-time streaming joint audio-video avatar generation.
+                                It distills a bidirectional audio-video diffusion teacher (LTX-2) into a few-step autoregressive generator,
+                                with synchronized long-short-term memory and hierarchical rolling prompt planning, achieving a 33× speedup on a single H200.</p>
+                        </td>
+                    </tr>
+
                     <tr onmouseout="salt_stop()" onmouseover="salt_start()">
                         <td style="padding:20px;width:25%;vertical-align:middle">
                             <div style="width:180px; height:180px; border-radius:5px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.1); background:#000; display:flex; flex-direction:column;">
@@ -512,8 +745,8 @@
                     <td style="padding:20px;width:25%;vertical-align:middle">
                         <div class="one">
                             <div class="two" id="motioni2v_image" style="opacity: 0;">
-                                <img style="width:100%" src="images/motioni2v.gif"></div>
-                            <img style="width:100%" src="images/motioni2v.gif">
+                                <img style="width:100%" src="images/motioni2v.webp"></div>
+                            <img style="width:100%" src="images/motioni2v.webp">
                         </div>
                         <script type="text/javascript">
                             function motioni2v_start() {
@@ -958,6 +1191,24 @@
         </td>
     </tr>
 </table>
+<script type="text/javascript">
+    // Touch screens have no hover: auto-alternate each visible publication thumbnail.
+    if (window.matchMedia('(hover: none)').matches && 'IntersectionObserver' in window) {
+        var shown = new Set();
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                var tr = e.target.parentNode;
+                if (e.isIntersecting) { shown.add(tr); } else { shown.delete(tr); tr.onmouseout(); }
+            });
+        }, {threshold: 0.6});
+        document.querySelectorAll('tr[onmouseover]').forEach(function (tr) { io.observe(tr.cells[0]); });
+        var flip = false;
+        setInterval(function () {
+            flip = !flip;
+            shown.forEach(function (tr) { flip ? tr.onmouseover() : tr.onmouseout(); });
+        }, 2500);
+    }
+</script>
 </body>
 
 </html>

@@ -284,3 +284,42 @@ table[style*="width:100%;border:0px"] {
 tr[onmouseout] td[style*="padding:20px;width:75%"] {
   padding-left: 30px !important;
 }
+/* Phones: stack each publication row (thumbnail on top, text below) */
+@media only screen and (max-width: 600px) {
+  td[style*="width:25%"],
+  td[style*="width:75%"] {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  td[style*="width:25%"] {
+    padding: 16px 16px 4px !important;
+  }
+
+  td[style*="width:75%"],
+  tr[onmouseout] td[style*="padding:20px;width:75%"] {
+    padding: 8px 16px 20px !important;
+  }
+
+  td[style*="width:25%"] > .one,
+  td[style*="width:25%"] > div[style*="width:180px"],
+  td[style*="width:25%"] > img-comparison-slider {
+    width: 100% !important;
+    max-width: 360px;
+    height: auto !important;
+    margin: 0 auto;
+  }
+
+  td[style*="width:25%"] > div[style*="width:180px"] {
+    aspect-ratio: 1 / 1;
+  }
+
+  .two {
+    inset: 0;
+  }
+
+  .one img, .two img {
+    display: block;
+  }
+}
